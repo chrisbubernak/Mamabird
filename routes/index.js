@@ -7,26 +7,35 @@ exports.index = function(req, res){
   res.render('index');
 };
 
+var sql = require('msnodesql');
+var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client 11.0};Server=.\\SQLEXPRESS;Database=MamabirdDB;Trusted_Connection={Yes}";
+
 exports.roster = function(req, res){
   //if year is undefined find the newest team and return its roster
   //else return the roster the roster for the specified team
-  var years = [2014, 2013, 2012, 2011, 2010];
-  var year = req.param('year') || years[0]; 
-  var players = 
-    [
-      {Name: 'Pawel Janas', Number:8, Year: 'Junior'}, 
-      {Name: 'Mark Rauls', Number:0, Year: 'Sophomore'},
-      {Name: 'Stanley Peterson', Number: 26, Year: 'Junior'}
-    ]; 
-  res.render('roster', {year: year, years: years, players: players});
+  sql.query(conn_str, "exec Get_Teams", function (err, results) {
+    if (err) {
+      res.render('unable to connect to database1');
+      return;
+    }
+    var teams = results;
+    var year = req.param('year') || teams[0].Year; 
+    sql.query(conn_str, "exec Get_Players " + year, function (err, results) {
+      if (err) {
+        res.render('unable to connect to database');
+        return;
+      }
+      res.render('roster', {year: year, teams: teams, players: results});
+    });
+  });
 };
 
 exports.schedule = function(req, res){
   res.render('schedule');
 };
 
-exports.alumni = function(req, res){
-  res.render('alumni');
+exports.merch= function(req, res){
+  res.render('merch');
 };
 
 exports.media = function(req, res){

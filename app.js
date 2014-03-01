@@ -7,7 +7,6 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var sql = require('msnodesql');
 
 var app = express();
 
@@ -32,7 +31,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/roster', routes.roster);
 app.get('/schedule', routes.schedule);
-app.get('/alumni', routes.alumni);
+app.get('/merch', routes.merch);
 app.get('/media', routes.media);
 app.get('/contact', routes.contact);
 
@@ -40,5 +39,4 @@ app.get('/contact', routes.contact);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
 

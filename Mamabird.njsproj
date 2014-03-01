@@ -36,7 +36,7 @@
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
-    <Content Include="views\alumni.jade" />
+    <Content Include="views\merch.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\footer.jade" />
     <Content Include="views\roster.jade" />

@@ -3,22 +3,42 @@ extends layout
 block content
   #years
     ul.roster.years
-      - for (var y in years) {
-        - if (years[y] == year) {
+      - for (var t in teams) {
+        - if (teams[t].Year == year) {
           li
-          a.selected(href='/roster?year='+years[y])=years[y]
+          a.selected(href='/roster?year='+teams[t].Year)=teams[t].Year
         - }
         - else {
           li
-          a(href='/roster?year='+years[y])=years[y]
+          a(href='/roster?year='+teams[t].Year)=teams[t].Year
         - }
       - }
   #players
     ul.roster.players
+      li
+        div.small.column Number
+        div.large.column Name
+        div.medium.column Year
+        div.small.column Exp
+        div.medium.column Major
+        div.small.column Height
+        div.small.column Weight
+        div.large.column High School
+        div.large.column Hometown
+      hr
       - for (var p in players) {
         - var player = players[p];
         - var text = player.Number + '\t' + player.Name + '\t' + player.Year;
-        li= text
+        li
+          div.small=player.Number
+          div.large=player.Name
+          div.medium=player.Year
+          div.small=player.Experience
+          div.medium=player.Major
+          div.small=player.Height
+          div.small=player.Weight
+          div.large=player.HighSchool
+          div.large=player.Hometown
       - }
     
 
