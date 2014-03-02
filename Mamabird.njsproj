@@ -36,6 +36,7 @@
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="sql\mamabirddb.sql" />
     <Content Include="views\merch.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\footer.jade" />
@@ -47,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="sql\" />
     <Folder Include="routes\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
