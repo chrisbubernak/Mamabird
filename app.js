@@ -7,8 +7,26 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-
 var app = express();
+var Poet = require('poet');
+
+var poet = Poet(app, {
+  posts: './_posts/',
+  postsPerPage: 5,
+  metaFormat: 'json'
+});
+
+poet.addRoute('/myposts/:post', function (req, res, next) {
+  var post = poet.helpers.getPost(req.params.post);
+  console.log(req.params)
+  if (post) {
+    // Do some fancy logging here
+    res.render('post', { post: post });
+  } else {
+    res.send(404);
+  }
+}).init();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -28,7 +46,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
+app.get('/', function (req, res) { res.render('index'); });
 app.get('/roster', routes.roster);
 app.get('/schedule', routes.schedule);
 app.get('/merch', routes.merch);

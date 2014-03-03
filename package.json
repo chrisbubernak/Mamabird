@@ -12,6 +12,7 @@
     "jade": "*",
     "stylus": "*",
     "debug": "^0.7.4",
-    "msnodesql": "*"
+    "msnodesql": "*",
+    "poet": "^1.0.0-rc4"
   }
 }

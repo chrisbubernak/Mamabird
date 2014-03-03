@@ -5,9 +5,11 @@ body
   color #c8c8c8
   margin auto
   width 66em
-
+.container
+  margin-top 2em
+  margin-bottom 2em
 #content
-  min-height 40em
+  //min-height 40em
 a
   text-decoration none
   color #ffd800
@@ -48,11 +50,14 @@ hr
   line-height:0;
 
 //roster styling
+.roster.container
+  width auto
 .roster
-  width 100%
   list-style-type none
-  margin 0
-  padding 0
+  margin-left auto
+  margin-right auto
+  padding-left 0
+  padding-right 0
   display block
 #years
   clear both
@@ -81,6 +86,17 @@ a.selected
   width 11em
 .column
   color #ffd800
+
+//blog post styleing
+.blog.date
+  font-style italic
+  font-size small
+ul.blog
+  padding 0em
+li.blog 
+  display inline-block
+  list-style-type none
+
 #footer
   width 100%
   margin auto

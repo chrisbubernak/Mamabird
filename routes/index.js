@@ -11,14 +11,14 @@ var sql = require('msnodesql');
 var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client 11.0};Server=.\\SQLEXPRESS;Database=MamabirdDB;Trusted_Connection={Yes}";
 
 exports.roster = function(req, res){
-  //if year is undefined find the newest team and return its roster
-  //else return the roster the roster for the specified team
   sql.query(conn_str, "exec Get_Teams", function (err, results) {
     if (err) {
       res.render('unable to connect to database1');
       return;
     }
     var teams = results;
+    //if year is undefined find the newest team and return its roster
+    //else return the roster the roster for the specified team
     var year = req.param('year') || teams[0].Year; 
     sql.query(conn_str, "exec Get_Players " + year, function (err, results) {
       if (err) {
