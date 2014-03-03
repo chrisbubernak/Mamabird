@@ -7,11 +7,11 @@ block content
         - for (var t in teams) {
           - if (teams[t].Year == year) {
             li
-            a.selected(href='/roster?year='+teams[t].Year)=teams[t].Year
+              a.selected(href='/roster?year='+teams[t].Year)=teams[t].Year
           - }
           - else {
             li
-            a(href='/roster?year='+teams[t].Year)=teams[t].Year
+              a(href='/roster?year='+teams[t].Year)=teams[t].Year
           - }
         - }
     #players
@@ -28,16 +28,28 @@ block content
           //div.large.column Hometown
         - for (var p in players) {
           - var player = players[p];
+          - var ordinal = players[p].Experience
+          if ordinal == 1
+            - ordinal += 'st year'
+          else if ordinal == 2
+            - ordinal += 'nd year'
+          else if ordinal == 3
+            - ordinal += 'rd year'
+          else if ordinal == 4 || ordinal == 5
+            - ordinal += 'th year'
           li
-            div.medium=player.Number
-            div.large=player.Name
-            div.medium=player.Year
-            div.medium=player.Experience
-            //div.medium=player.Major
-            div.medium=player.Height
-            div.medium=player.Weight
-            //div.large=player.HighSchool
-            //div.large=player.Hometown
+            a(href='/player?id='+player.Id)
+              div.medium=player.Number
+              div.large=player.Name
+              div.medium=player.Year
+              div.medium=ordinal
+              //div.medium=player.Major
+              div.medium=player.Height
+              div.medium=player.Weight
+              //div.large=player.HighSchool
+              //div.large=player.Hometown
         - }
+    span.captain * 
+    span denotes captain
     
 

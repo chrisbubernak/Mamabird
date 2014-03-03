@@ -46,3 +46,9 @@ exports.contact = function(req, res){
   res.render('contact');
 };
 
+exports.player = function(req, res){
+  var personId = req.param('id'); 
+  res.render('player');
+};
+
+

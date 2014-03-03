@@ -42,6 +42,7 @@
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="sql\mamabirddb.sql" />
+    <Content Include="views\player.jade" />
     <Content Include="views\merch.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\footer.jade" />
