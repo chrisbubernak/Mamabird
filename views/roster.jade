@@ -41,6 +41,8 @@ block content
             a(href='/player?id='+player.Id)
               div.medium=player.Number
               div.large=player.Name
+                if player.Captain
+                  span.captain  *
               div.medium=player.Year
               div.medium=ordinal
               //div.medium=player.Major
