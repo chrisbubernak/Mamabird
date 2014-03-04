@@ -38,6 +38,8 @@
     <Compile Include="_posts\website-is-back.md" />
     <Content Include="package.json" />
     <Content Include="public\images\bird.ico" />
+    <Content Include="public\images\players\20.jpg" />
+    <Content Include="public\images\players\8.jpg" />
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="public\images\players\" />
     <Folder Include="_posts\" />
     <Folder Include="sql\" />
     <Folder Include="routes\" />

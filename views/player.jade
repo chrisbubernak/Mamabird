@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.container
+    div.player.bio
+      - var player = results[0];
+      p Name: #{player.Name}
+      p Number: #{player.Number}
+      p Height: #{player.Height}
+      p Weight: #{player.Weight}
+      p Major: #{player.Major}
+      p Hometown: #{player.Hometown}
+      p High School: #{player.HighSchool}
+      p Year(s): 
+        - for (var i = 0; i <  results.length; i++) {
+          a(href='/roster?year=2013')= results[i].Team
+          - if( i != results.length - 1) {
+            , 
+          - }
+        - } 
+    div.player.image
+      img(src=image)

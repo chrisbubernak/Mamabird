@@ -8,6 +8,7 @@ exports.index = function(req, res){
 };
 
 var sql = require('msnodesql');
+var fs = require('fs');
 var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client 11.0};Server=.\\SQLEXPRESS;Database=MamabirdDB;Trusted_Connection={Yes}";
 
 exports.roster = function(req, res){
@@ -48,7 +49,20 @@ exports.contact = function(req, res){
 
 exports.player = function(req, res){
   var personId = req.param('id'); 
-  res.render('player');
+  sql.query(conn_str, "exec Get_Person " + personId, function (err, results) {
+    if (err) {
+      res.render('unable to connect to database');
+      return;
+    }
+    /*if (fs.existsSync('images/players/' + personId + '.jpg')) {
+      image = '/images/players/' + personId + '.jpg';
+    }
+    else {
+      image = '/images/yellowbird.png';
+    }*/
+    image = '/images/players/' + personId + '.jpg';
+    res.render('player', {results: results, image: image});
+  });
 };
 
 
