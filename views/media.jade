@@ -3,6 +3,46 @@ extends layout
 block content
   div.container
     p
-      a(href='https://www.youtube.com/watch?v=D-RJQs0U2FI') #MICKLEMANIA
+      a.popup-youtube(href='https://www.youtube.com/watch?v=VatOZvNAJ0E') Preseason Highlights 2013-2014
     p
-      a(href='http://vimeo.com/1012004') Jolian for Callahan
+      a.popup-youtube(href='https://www.youtube.com/watch?v=D-RJQs0U2FI') #MICKLEMANIA
+    p
+      a.popup-vimeo(href='http://vimeo.com/4626486') Mac for Callahan
+    p
+      a.popup-vimeo(href='http://vimeo.com/1012004') Jolian for Callahan
+    p
+      a.popup-vimeo(href='http://vimeo.com/9357048') Beau Jumps Over a Guy
+    p
+      a.popup-vimeo(href='http://vimeo.com/1041416') Beau Jumps Over a Guy
+    p
+      a.popup-vimeo(href='http://vimeo.com/4323896') Nationals 2008
+    p
+      a.popup-vimeo(href='http://vimeo.com/2923618') Stanford Invite 2008
+    p
+      a.popup-vimeo(href='http://vimeo.com/1182187') Trouble in Vegas 2008    
+    p
+      a.popup-vimeo(href='http://vimeo.com/6216481') Mamabird 2008
+    p
+      a.popup-vimeo(href='http://vimeo.com/9380054') Mamabird 2007
+    p
+      a.popup-vimeo(href='http://vimeo.com/9356685') Mamabird 2006
+    p
+      a.popup-vimeo(href='http://vimeo.com/9356202') Mamabird 2005
+
+      
+block scripts
+  script(src="/javascripts/jquery.min.js")
+  script(src="/javascripts/popup.js")
+  link(rel='stylesheet', href='/stylesheets/popup.css')
+  script.
+    $(document).ready(function() {
+      $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false
+      });
+    });

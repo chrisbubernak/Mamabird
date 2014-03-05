@@ -30,6 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\jquery.min.js" />
+    <Compile Include="public\javascripts\popup.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="views\tag.jade" />
     <Compile Include="views\postSnippet.jade" />
@@ -41,6 +43,7 @@
     <Content Include="public\images\players\20.jpg" />
     <Content Include="public\images\players\8.jpg" />
     <Content Include="public\images\yellowbird.png" />
+    <Content Include="public\stylesheets\popup.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="sql\mamabirddb.sql" />

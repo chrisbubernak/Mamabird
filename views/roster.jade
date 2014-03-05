@@ -21,11 +21,8 @@ block content
           div.large.column Name
           div.medium.column Year
           div.medium.column Experience
-          //div.medium.column Major
           div.medium.column Height
           div.medium.column Weight
-          //div.large.column High School
-          //div.large.column Hometown
         - for (var p in players) {
           - var player = players[p];
           - var ordinal = players[p].Experience
@@ -45,11 +42,8 @@ block content
                   span.captain  *
               div.medium=player.Year
               div.medium=ordinal
-              //div.medium=player.Major
               div.medium=player.Height
               div.medium=player.Weight
-              //div.large=player.HighSchool
-              //div.large=player.Hometown
         - }
     span.captain * 
     span denotes captain
