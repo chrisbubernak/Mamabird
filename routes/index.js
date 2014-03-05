@@ -54,13 +54,12 @@ exports.player = function(req, res){
       res.render('unable to connect to database');
       return;
     }
-    /*if (fs.existsSync('images/players/' + personId + '.jpg')) {
+    if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.jpg')) {
       image = '/images/players/' + personId + '.jpg';
     }
     else {
       image = '/images/yellowbird.png';
-    }*/
-    image = '/images/players/' + personId + '.jpg';
+    }
     res.render('player', {results: results, image: image});
   });
 };
