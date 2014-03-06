@@ -1,7 +1,8 @@
 ﻿extends layout
 
 block content
-  h3
-    a(href=tagUrl(tag)) posts tagged * #{tag}
-  - each post in posts
-    include postSnippet
+  div.container
+    - each post in posts
+      include postSnippet
+block scripts
+  link(rel='stylesheet', href='/stylesheets/blog.css')

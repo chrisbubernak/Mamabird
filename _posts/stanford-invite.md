@@ -1,6 +1,6 @@
 ﻿{{{
   "title": "Stanford Invite",
-  "tags": ["tournament", "stanford"],
+  "tags": ["Tournament", "Stanford"],
   "category": "tournaments",
   "date": "3-2-2014"
 }}}

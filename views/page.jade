@@ -1,7 +1,22 @@
 ﻿extends layout
 
 block content
-  - each post in posts
-    include postSnippet
-
-  include pagination
+  div.sideBar
+    div.blog.spaceBelow
+      h2.recent Recent Posts
+      - var recent = getPosts(0,10)
+      - each post in recent
+        li
+          a(href=post.url) #{post.title}
+    div.blog.spaceBelow
+      h2.recent Tags
+      - var tags = getTags()
+      - each tag in tags
+        li
+          a(href=tagUrl(tag)) #{tag}
+  div.postList.container
+    - each post in posts
+      include postSnippet
+    include pagination
+block scripts
+  link(rel='stylesheet', href='/stylesheets/blog.css')

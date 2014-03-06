@@ -5,8 +5,10 @@
   - while ( i <= pageCount )
     if page == i
       li.blog(class='active')
-        a(href=pageURL(i)) #{i}
+        a(href=pageURL(i))  #{i}
+        |, 
     else
       li.blog
-        a(href=pageURL(i)) #{i}
+        a(href=pageURL(i))  #{i} 
+        |, 
     - i++;

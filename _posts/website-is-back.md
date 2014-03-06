@@ -1,6 +1,6 @@
 ﻿{{{
   "title": "Website is Back",
-  "tags": ["website"],
+  "tags": ["Website"],
   "category": "website",
   "date": "3-1-2014"
 }}}

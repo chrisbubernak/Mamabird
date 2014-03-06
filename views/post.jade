@@ -2,7 +2,7 @@
 
 block content
   div.post.container
-    h2
+    h2.postTitle
       a(href=post.url)
         = post.title
     span.blog.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
@@ -12,3 +12,5 @@ block content
       - each tag in post.tags
         a(href=tagUrl(tag))
           span.label.label-info #{tag} 
+block scripts
+  link(rel='stylesheet', href='/stylesheets/blog.css')

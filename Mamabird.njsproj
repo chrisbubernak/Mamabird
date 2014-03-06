@@ -43,8 +43,11 @@
     <Content Include="public\images\players\20.jpg" />
     <Content Include="public\images\players\8.jpg" />
     <Content Include="public\images\yellowbird.png" />
+    <Content Include="public\stylesheets\blog.styl" />
+    <Content Include="public\stylesheets\player.styl" />
     <Content Include="public\stylesheets\popup.css" />
-    <Content Include="public\stylesheets\style.styl" />
+    <Content Include="public\stylesheets\roster.styl" />
+    <Content Include="public\stylesheets\shared.styl" />
     <Content Include="README.md" />
     <Content Include="sql\mamabirddb.sql" />
     <Content Include="views\player.jade" />
@@ -58,6 +61,7 @@
     <Content Include="views\schedule.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="_posts\micklemania-shirts.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

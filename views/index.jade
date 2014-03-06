@@ -1,9 +1,24 @@
 extends layout
 
 block content
-  - var posts = getPosts(0,5)
-  - var page  = 1
-  - each post in posts
-    include postSnippet
-
-  include pagination
+  div.sideBar
+    div.blog.spaceBelow
+      h2.recent Recent Posts
+      - var posts = getPosts(0,10)
+      - each post in posts
+        li
+          a(href=post.url) #{post.title}
+    div.blog.spaceBelow
+      h2.recent Tags
+      - var tags = getTags()
+      - each tag in tags
+        li
+          a(href=tagUrl(tag)) #{tag}
+  div.postList.container
+    - var posts = getPosts(0,2)
+    - var page  = 1
+    - each post in posts
+      include postSnippet
+    include pagination
+block scripts
+  link(rel='stylesheet', href='/stylesheets/blog.css')
