@@ -15,7 +15,7 @@ block content
         li
           a(href=tagUrl(tag)) #{tag}
   div.postList.container
-    - var posts = getPosts(0,2)
+    - var posts = getPosts(0,5)
     - var page  = 1
     - each post in posts
       include postSnippet

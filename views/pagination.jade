@@ -1,14 +1,14 @@
 ﻿ul.pagination.blog
-  li.blog Page(s): 
+  li.blog Page(s):&nbsp;
   - var i = 1;
   - var pageCount = getPageCount();
   - while ( i <= pageCount )
     if page == i
       li.blog(class='active')
         a(href=pageURL(i))  #{i}
-        |, 
     else
       li.blog
         a(href=pageURL(i))  #{i} 
-        |, 
+    if i != pageCount
+      |, 
     - i++;
