@@ -52,7 +52,7 @@ app.get('/roster', routes.roster);
 app.get('/schedule', routes.schedule);
 app.get('/merch', routes.merch);
 app.get('/media', routes.media);
-app.get('/contact', routes.contact);
+app.get('/info', routes.info);
 app.get('/player', routes.player);
 
 http.createServer(app).listen(app.get('port'), function(){

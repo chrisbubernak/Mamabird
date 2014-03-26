@@ -55,7 +55,7 @@
     <Content Include="sql\mamabirddb.sql" />
     <Content Include="views\player.jade" />
     <Content Include="views\merch.jade" />
-    <Content Include="views\contact.jade" />
+    <Content Include="views\info.jade" />
     <Content Include="views\footer.jade" />
     <Content Include="views\page.jade" />
     <Content Include="views\post.jade" />

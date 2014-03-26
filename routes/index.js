@@ -43,8 +43,8 @@ exports.media = function(req, res){
   res.render('media');
 };
 
-exports.contact = function(req, res){
-  res.render('contact');
+exports.info = function(req, res){
+  res.render('info');
 };
 
 exports.player = function(req, res){
