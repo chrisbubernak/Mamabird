@@ -54,7 +54,10 @@ exports.player = function(req, res){
       res.render('unable to connect to database');
       return;
     }
-    if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.jpg')) {
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.png')) {
+      image = '/images/players/' + personId + '.png';
+    }
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.jpg')) {
       image = '/images/players/' + personId + '.jpg';
     }
     else {
