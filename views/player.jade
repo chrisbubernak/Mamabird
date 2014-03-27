@@ -13,7 +13,7 @@ block content
       p High School: #{player.HighSchool}
       p Year(s): 
         - for (var i = 0; i <  results.length; i++) {
-          a(href='/roster?year=2013')= results[i].Team
+          a(href='/roster?year=#{results[i].Team}')= results[i].Team
           - if( i != results.length - 1) {
             , 
           - }
