@@ -55,6 +55,7 @@
     <Content Include="public\stylesheets\shared.styl" />
     <Content Include="README.md" />
     <Content Include="sql\mamabirddb.sql" />
+    <Content Include="views\coach.jade" />
     <Content Include="views\player.jade" />
     <Content Include="views\merch.jade" />
     <Content Include="views\info.jade" />
@@ -71,6 +72,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="public\images\players\" />
+    <Folder Include="views\includes\" />
     <Folder Include="_posts\" />
     <Folder Include="sql\" />
     <Folder Include="routes\" />

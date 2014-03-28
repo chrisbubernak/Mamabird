@@ -54,6 +54,8 @@ app.get('/merch', routes.merch);
 app.get('/media', routes.media);
 app.get('/info', routes.info);
 app.get('/player', routes.player);
+app.get('/coach', routes.coach);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -14,7 +14,7 @@ var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client
 exports.roster = function(req, res){
   sql.query(conn_str, "exec Get_Teams", function (err, results) {
     if (err) {
-      res.render('unable to connect to database1');
+      res.render('unable to connect to database');
       return;
     }
     var teams = results;
@@ -26,7 +26,15 @@ exports.roster = function(req, res){
         res.render('unable to connect to database');
         return;
       }
-      res.render('roster', {year: year, teams: teams, players: results});
+      var players = results;
+      sql.query(conn_str, "exec Get_Coaches " + year, function (err, results) {
+        if (err) {
+          res.render('unable to connect to database');
+          return;
+        }
+        var coaches = results;
+        res.render('roster', {year: year, teams: teams, players: players, coaches: coaches});
+      });
     });
   });
 };
@@ -64,6 +72,27 @@ exports.player = function(req, res){
       image = '/images/yellowbird.png';
     }
     res.render('player', {results: results, image: image});
+  });
+};
+
+
+exports.coach = function(req, res){
+  var personId = req.param('id'); 
+  sql.query(conn_str, "exec Get_Coach " + personId, function (err, results) {
+    if (err) {
+      res.render('unable to connect to database');
+      return;
+    }
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.png')) {
+      image = '/images/players/' + personId + '.png';
+    }
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\players\\' + personId + '.jpg')) {
+      image = '/images/players/' + personId + '.jpg';
+    }
+    else {
+      image = '/images/yellowbird.png';
+    }
+    res.render('coach', {results: results, image: image});
   });
 };
 

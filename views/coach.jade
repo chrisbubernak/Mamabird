@@ -1,0 +1,19 @@
+﻿extends layout
+
+block content
+  div.container
+    div.player.bio
+      - var coach = results[0];
+      p Name: #{coach.Name}
+      p Hometown: #{coach.Hometown}
+      p Year(s): 
+        - for (var i = 0; i <  results.length; i++) {
+          a(href='/roster?year=#{results[i].Team}')= results[i].Team
+          - if( i != results.length - 1) {
+            , 
+          - }
+        - } 
+    div.player.image
+      img(src=image)
+block scripts
+  link(rel='stylesheet', href='/stylesheets/player.css')

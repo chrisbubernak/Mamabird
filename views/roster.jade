@@ -45,8 +45,19 @@ block content
               div.medium=player.Height
               div.medium=player.Weight
         - }
-    span.captain * 
-    span denotes captain
+    p
+      span.yellow * 
+      span denotes captain
+    div 
+      span.yellow Coaches: 
+      - for (var c in coaches) {
+        - var coach = coaches[c];
+        a(href='/coach?id='+coach.Id)
+          span= coach.Name
+        - if (c != coaches.length -1) {
+          span , 
+        - }
+      - }
 block scripts
   link(rel='stylesheet', href='/stylesheets/roster.css')
 
