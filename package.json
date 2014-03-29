@@ -13,6 +13,7 @@
     "stylus": "*",
     "debug": "^0.7.4",
     "msnodesql": "*",
-    "poet": "^1.0.0-rc4"
+    "poet": "^1.0.0-rc4",
+    "async": "^0.4.0"
   }
 }

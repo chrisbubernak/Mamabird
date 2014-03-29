@@ -1,43 +1,69 @@
-﻿
-/*
- * GET home page.
- */
+﻿var sql = require('msnodesql');
+var async = require('async');
+var fs = require('fs');
+var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client 11.0};Server=.\\SQLEXPRESS;Database=MamabirdDB;Trusted_Connection={Yes}";
+
 
 exports.index = function(req, res){
   res.render('index');
 };
 
-var sql = require('msnodesql');
-var fs = require('fs');
-var conn_str = process.env.ConnectionString || "Driver={SQL Server Native Client 11.0};Server=.\\SQLEXPRESS;Database=MamabirdDB;Trusted_Connection={Yes}";
-
 exports.roster = function(req, res){
-  sql.query(conn_str, "exec Get_Teams", function (err, results) {
-    if (err) {
-      res.render('unable to connect to database');
-      return;
-    }
-    var teams = results;
-    //if year is undefined find the newest team and return its roster
-    //else return the roster the roster for the specified team
-    var year = req.param('year') || teams[0].Year; 
-    sql.query(conn_str, "exec Get_Players " + year, function (err, results) {
-      if (err) {
-        res.render('unable to connect to database');
-        return;
-      }
-      var players = results;
-      sql.query(conn_str, "exec Get_Coaches " + year, function (err, results) {
+  var year;
+  var teams;
+  var players;
+  var coaches;
+
+  async.series([
+    function (callback) {
+      sql.query(conn_str, "exec Get_Teams", function (err, results) {
         if (err) {
-          res.render('unable to connect to database');
-          return;
+          return callback(err);
         }
-        var coaches = results;
-        res.render('roster', {year: year, teams: teams, players: players, coaches: coaches});
+        if (results.length == 0) {
+          return callback(new Error('No Teams found in DB'));
+        }
+        //try and get the year out of the url
+        year = req.param('year');
+        if (!year) {
+          //otherwise just take the newest year
+          year = results[0].Year;
+        }
+        teams = results;
+        callback();
       });
-    });
+    },
+    function (callback) {
+      async.parallel([
+        //load players
+        function (callback) {
+          sql.query(conn_str, 'exec Get_Players ' + year, function (err, results) {
+            if (err) {
+              return callback(err);
+            }
+            players = results; 
+            callback();
+          });
+        },
+        //load coaches
+        function (callback) {
+          sql.query(conn_str, 'exec Get_Coaches ' + year, function (err, results) {
+            if (err) {
+              return callback(err);
+            }
+            coaches = results; 
+            callback();
+          });
+        }
+      ], callback);
+    }
+  ], function(err) {
+    if (err) {
+      res.render('db error');
+    }
+    res.render('roster', {year: year, teams: teams, players: players, coaches: coaches});
   });
-};
+}
 
 exports.schedule = function(req, res){
   res.render('schedule');
