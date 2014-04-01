@@ -41,11 +41,16 @@
     <Content Include="package.json" />
     <Content Include="public\images\bird.ico" />
     <Content Include="public\images\players\1.jpg" />
+    <Content Include="public\images\players\10.jpg" />
+    <Content Include="public\images\players\12.jpg" />
     <Content Include="public\images\players\15.png" />
     <Content Include="public\images\players\19.jpg" />
+    <Content Include="public\images\players\2.jpg" />
     <Content Include="public\images\players\20.jpg" />
     <Content Include="public\images\players\21.png" />
     <Content Include="public\images\players\23.png" />
+    <Content Include="public\images\players\55.jpg" />
+    <Content Include="public\images\players\7.jpg" />
     <Content Include="public\images\players\8.jpg" />
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\blog.styl" />
