@@ -58,10 +58,17 @@ exports.roster = function(req, res){
       ], callback);
     }
   ], function(err) {
+    var image = null;
     if (err) {
       res.render('db error');
     }
-    res.render('roster', {year: year, teams: teams, players: players, coaches: coaches});
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\teams\\' + year + '.png')) {
+      image = '/images/teams/' + year + '.png';
+    }
+    else if (fs.existsSync(process.cwd() + '\\public\\images\\teams\\' + year + '.jpg')) {
+      image = '/images/teams/' + year + '.jpg';
+    }
+    res.render('roster', {year: year, teams: teams, players: players, coaches: coaches, image: image});
   });
 }
 

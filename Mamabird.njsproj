@@ -52,6 +52,13 @@
     <Content Include="public\images\players\55.jpg" />
     <Content Include="public\images\players\7.jpg" />
     <Content Include="public\images\players\8.jpg" />
+    <Content Include="public\images\teams\2007.jpg" />
+    <Content Include="public\images\teams\2009.jpg" />
+    <Content Include="public\images\teams\2010.jpg" />
+    <Content Include="public\images\teams\2011.jpg" />
+    <Content Include="public\images\teams\2012.JPG" />
+    <Content Include="public\images\teams\2013.jpg" />
+    <Content Include="public\images\teams\2014.jpg" />
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\blog.styl" />
     <Content Include="public\stylesheets\player.styl" />
@@ -76,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="public\images\teams\" />
     <Folder Include="public\images\players\" />
     <Folder Include="views\includes\" />
     <Folder Include="_posts\" />
