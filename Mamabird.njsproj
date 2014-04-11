@@ -52,6 +52,12 @@
     <Content Include="public\images\players\55.jpg" />
     <Content Include="public\images\players\7.jpg" />
     <Content Include="public\images\players\8.jpg" />
+    <Content Include="public\images\social\flickr.png" />
+    <Content Include="public\images\social\instagram.png" />
+    <Content Include="public\images\social\youtube.png" />
+    <Content Include="public\images\social\facebook.png" />
+    <Content Include="public\images\social\twitter.png" />
+    <Content Include="public\images\social\vimeo.png" />
     <Content Include="public\images\teams\2007.jpg" />
     <Content Include="public\images\teams\2009.jpg" />
     <Content Include="public\images\teams\2010.jpg" />
@@ -61,6 +67,7 @@
     <Content Include="public\images\teams\2014.jpg" />
     <Content Include="public\images\yellowbird.png" />
     <Content Include="public\stylesheets\blog.styl" />
+    <Content Include="public\stylesheets\info.styl" />
     <Content Include="public\stylesheets\player.styl" />
     <Content Include="public\stylesheets\popup.css" />
     <Content Include="public\stylesheets\roster.styl" />
@@ -83,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="public\images\social\" />
     <Folder Include="public\images\teams\" />
     <Folder Include="public\images\players\" />
     <Folder Include="views\includes\" />
