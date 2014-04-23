@@ -71,6 +71,7 @@
     <Content Include="public\stylesheets\player.styl" />
     <Content Include="public\stylesheets\popup.css" />
     <Content Include="public\stylesheets\roster.styl" />
+    <Content Include="public\stylesheets\schedule.styl" />
     <Content Include="public\stylesheets\shared.styl" />
     <Content Include="README.md" />
     <Content Include="sql\mamabirddb.sql" />
