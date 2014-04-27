@@ -1,5 +1,44 @@
 extends layout
 
 block content
-  div.container
-    p At some point there is going to be a schedule here!
+  div.schedule.container
+    #years
+      ul.schedule.years
+        - for (var t in teams) {
+          - if (teams[t].Year == year) {
+            li
+              a.selected(href='/schedule?year='+teams[t].Year)=teams[t].Year
+          - }
+          - else {
+            li
+              a(href='/schedule?year='+teams[t].Year)=teams[t].Year
+          - }
+        - }
+    #tournaments
+      - for (var t in tournaments) {
+      - var tournament = tournaments[t];
+      p
+        h2
+          a(href=tournament[0].Url, target='_blank')=tournament[0].TournamentName 
+        br
+        - for (var g in tournament) {
+        -   var game = tournament[g];
+        -   var color = 'green';
+        -   if (game.Score1 == 'W') {
+        -     color = 'green'
+        -   }
+        -   else if (game.Score1 == 'F' || game.Score1 == 'L') {
+        -     color = 'red'
+        -   }
+        -   else if (Number(game.Score1) < Number(game.Score2)) {
+        -     color = 'red'
+        -   }
+        div
+          span #{game.Team1} vs #{game.Team2} 
+          span(style='color:#{color}') #{game.Score1}-#{game.Score2}
+        - }
+      - }
+
+
+block scripts
+  link(rel='stylesheet', href='/stylesheets/schedule.css')
