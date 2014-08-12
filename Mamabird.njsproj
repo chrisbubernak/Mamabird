@@ -40,6 +40,8 @@
     <Compile Include="_posts\website-is-back.md" />
     <Content Include="package.json" />
     <Content Include="public\images\bird.ico" />
+    <Content Include="public\images\champs.jpg" />
+    <Content Include="public\images\fans.jpg" />
     <Content Include="public\images\players\1.jpg" />
     <Content Include="public\images\players\10.jpg" />
     <Content Include="public\images\players\12.jpg" />
@@ -87,6 +89,8 @@
     <Content Include="views\schedule.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="_posts\2014-2015-tryout-info.md" />
+    <Content Include="_posts\mamabird-wins-nationals.md" />
     <Content Include="_posts\micklemania-shirts.md" />
   </ItemGroup>
   <ItemGroup>
