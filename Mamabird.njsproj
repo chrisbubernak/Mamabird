@@ -90,6 +90,7 @@
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="_posts\2014-2015-tryout-info.md" />
+    <Content Include="_posts\2014-club-sectionals.md" />
     <Content Include="_posts\mamabird-wins-nationals.md" />
     <Content Include="_posts\micklemania-shirts.md" />
   </ItemGroup>
