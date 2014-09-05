@@ -68,6 +68,7 @@
     <Content Include="public\images\teams\2013.jpg" />
     <Content Include="public\images\teams\2014.jpg" />
     <Content Include="public\images\yellowbird.png" />
+    <Content Include="public\pdfs\player-info-2015.pdf" />
     <Content Include="public\stylesheets\blog.styl" />
     <Content Include="public\stylesheets\info.styl" />
     <Content Include="public\stylesheets\player.styl" />
@@ -99,6 +100,7 @@
     <Folder Include="public\images\social\" />
     <Folder Include="public\images\teams\" />
     <Folder Include="public\images\players\" />
+    <Folder Include="public\pdfs\" />
     <Folder Include="views\includes\" />
     <Folder Include="_posts\" />
     <Folder Include="sql\" />
